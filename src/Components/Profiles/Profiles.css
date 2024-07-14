@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.profile-container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-title {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-summary p {
+  font-size: 1.1em;
+  color: #555;
+  margin: 10px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-summary strong {
+  color: #333;
+}
+
+.ant-form-item {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.loading,
+.error,
+.not-found {
+  text-align: center;
+  font-size: 1.5em;
+  color: #999;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ant-btn-link,
+.ant-btn-primary,
+.ant-btn {
+  font-family: 'Poppins', sans-serif;
+}
+
+.profile-details-modal p {
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+}

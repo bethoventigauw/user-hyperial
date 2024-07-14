@@ -1,0 +1,9 @@
+.adminSidebar{
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .adminNavbar{
+    flex: 5;
+  }

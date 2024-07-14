@@ -1,0 +1,56 @@
+.material-container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.material-title {
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.edit-action {
+  color: blue;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.edit-action:hover {
+  color: darkblue;
+}
+
+.delete-action {
+  color: red;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.delete-action:hover {
+  color: darkred;
+}
+
+.ant-table {
+  border: none; /* Menghilangkan border pada tabel */
+  background-color: transparent; /* Background transparan */
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+  border: none; /* Menghilangkan border pada header dan sel */
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #f0f0f0; /* Memberikan highlight pada hover */
+  font-family: 'Poppins', sans-serif; /* Tambahkan font-family */
+}

@@ -1,0 +1,47 @@
+.navbar {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #BBE1FA;
+    background-color: #0D2433;
+    border-bottom: 1px solid lightgray;
+    z-index: 1000; /* Ensure the navbar is on top of other elements */
+  }
+  
+  .navbarContainer {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; /* Adjust padding for better alignment */
+  }
+  
+  .items {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .icon {
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .logout {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .logoutIcon {
+    font-size: 25px;
+    cursor: pointer;
+  }

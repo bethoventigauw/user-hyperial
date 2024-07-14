@@ -1,0 +1,9 @@
+.vendorSidebar{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.vendorNavbar{
+  flex: 6;
+}
