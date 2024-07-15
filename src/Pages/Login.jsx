@@ -68,7 +68,7 @@ function Login() {
           <button type="submit" className="login-button">Login</button>
         </form>
         <div className="back-to-landing">
-          <Link to="http://localhost:4000/" className="landing-link">Back to LandingPage</Link>
+          <Link to="https://hyperial.my.id/" className="landing-link">Back to LandingPage</Link>
         </div>
       </div>
     </div>

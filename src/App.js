@@ -12,6 +12,7 @@ import Navbar from './Components/Navbar/Navbar';
 import Project from './Components/Project/Project';
 import ProjectList from './Components/ProjectList/ProjectList';
 import ProjectManager from './Pages/ProjectManager';
+import ProtectedRoute from './Components/Protection/ProtectedRoute';
 import './App.css';
 
 function MainRoutes() {
@@ -24,13 +25,13 @@ function MainRoutes() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/vendor' element={<Vendor />} />
-            <Route path='/staff' element={<Staff />} />
-            <Route path="/profiles/:id" element={<Profiles />} />
-            <Route path='/material/:vendorId' element={<Material />} />
-            <Route path='/dashboard/:vendorId' element={<Dashboard />} />
-            <Route path='/projectManager/createProject' element={<Project />} />
-            <Route path='/projectlist' element={<ProjectList />} />
-            <Route path='/projectManager' element={<ProjectManager />} />
+            <Route path='/staff' element={<ProtectedRoute element={<Staff />}/>} />
+            <Route path="/profiles/:id" element={<ProtectedRoute element={<Profiles />}/>} />
+            <Route path='/material/:vendorId' element={<ProtectedRoute element={<Material />}/>} />
+            <Route path='/dashboard/:vendorId' element={<ProtectedRoute element={<Dashboard />}/>} />
+            <Route path='/projectManager/createProject' element={<ProtectedRoute element={<Project />} />}/>
+            <Route path='/projectlist' element={<ProtectedRoute element={<ProjectList />}/>} />
+            <Route path='/projectManager' element={<ProtectedRoute element={<ProjectManager />}/>} />
           </Routes>
         </div>
       </div>
@@ -51,4 +52,3 @@ function App() {
 }
 
 export default App;
-
