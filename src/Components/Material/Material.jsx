@@ -23,7 +23,7 @@ const Material = () => {
 
   const fetchMaterials = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/vendors/get-materials/${vendorId}`);
+      const response = await axios.get(`https://backend.hyperial.my.id/vendors/get-materials/${vendorId}`);
       console.log("API Response:", response.data);
       if (response.data.success) {
         setMaterials(response.data.materials);
@@ -49,9 +49,9 @@ const Material = () => {
   const handleSubmit = async () => {
     try {
       if (editMaterialId) {
-        await axios.put(`http://localhost:5000/vendors/edit-material/${editMaterialId}`, formData);
+        await axios.put(`https://backend.hyperial.my.id/vendors/edit-material/${editMaterialId}`, formData);
       } else {
-        await axios.post('http://localhost:5000/vendors/add-materials', {
+        await axios.post('https://backend.hyperial.my.id/vendors/add-materials', {
           VendorId: vendorId,
           ...formData
         });

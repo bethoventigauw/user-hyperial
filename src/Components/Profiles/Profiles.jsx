@@ -20,7 +20,7 @@ const Profiles = () => {
   useEffect(() => {
     const fetchVendor = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/vendors/get-vendor/${id}`);
+        const response = await axios.get(`https://backend.hyperial.my.id/vendors/get-vendor/${id}`);
         setVendor(response.data.vendor);
         form.setFieldsValue(response.data.vendor);
         setLoading(false);
@@ -35,7 +35,7 @@ const Profiles = () => {
 
   const handleUpdate = async (values) => {
     try {
-      const response = await axios.put(`http://localhost:5000/vendors/edit-vendor/${id}`, values);
+      const response = await axios.put(`https://backend.hyperial.my.id/vendors/edit-vendor/${id}`, values);
       setVendor(response.data.vendor);
       setIsEditing(false);
       setIsEditModalVisible(false);

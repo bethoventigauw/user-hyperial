@@ -16,7 +16,7 @@ function ProjectManager() {
       return;
     }
 
-    axios.get('http://localhost:5000/authen/proyekManager', {
+    axios.get('https://backend.hyperial.my.id/authen/proyekManager', {
       headers: {
         'Authorization': token
       }

@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   const handleOk = () => {
-    axios.get('http://localhost:5000/logout')
+    axios.get('https://backend.hyperial.my.id/logout')
       .then(res => {
         if (res.data === "success") {
           localStorage.removeItem('token');

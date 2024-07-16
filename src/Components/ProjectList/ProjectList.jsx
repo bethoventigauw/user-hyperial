@@ -23,7 +23,7 @@ const ProjectList = () => {
   const fetchProjects = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:5000/ProjectManager/getProjects', {
+      const response = await axios.get('https://backend.hyperial.my.id/ProjectManager/getProjects', {
         headers: {
           'Authorization': token
         }
@@ -38,7 +38,7 @@ const ProjectList = () => {
 
   const fetchAvailableMaterials = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/admin/allMaterials');
+      const response = await axios.get('https://backend.hyperial.my.id/admin/allMaterials');
       setAvailableMaterials(response.data.materials);
     } catch (error) {
       console.error('Error fetching available materials:', error);
@@ -82,7 +82,7 @@ const ProjectList = () => {
     };
 
     try {
-      await axios.post(`http://localhost:5000/ProjectManager/addAdditionalMaterial/${projectID}`, payload, {
+      await axios.post(`https://backend.hyperial.my.id/ProjectManager/addAdditionalMaterial/${projectID}`, payload, {
         headers: {
           'Authorization': token
         }
@@ -98,7 +98,7 @@ const ProjectList = () => {
   const completeProject = async (projectID) => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.post(`http://localhost:5000/ProjectManager/completeProject/${projectID}`, {}, {
+      const response = await axios.post(`https://backend.hyperial.my.id/ProjectManager/completeProject/${projectID}`, {}, {
         headers: {
           'Authorization': token
         }

@@ -15,7 +15,7 @@ function Staff() {
       return;
     }
 
-    axios.get('http://localhost:5000/authen/staff', {
+    axios.get('https://backend.hyperial.my.id/authen/staff', {
       headers: {
         'Authorization': token
       }

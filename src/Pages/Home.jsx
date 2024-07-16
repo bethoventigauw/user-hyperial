@@ -16,7 +16,7 @@ function Home() {
     }
 
     // Periksa token dan ambil data dari backend
-    axios.get('http://localhost:5000/authen/home', {
+    axios.get('https://backend.hyperial.my.id/authen/home', {
       headers: {
         'Authorization': `Bearer ${token}`
       }

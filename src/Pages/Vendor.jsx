@@ -16,7 +16,7 @@ function Vendor() {
       return;
     }
 
-    axios.get('http://localhost:5000/authen/vendor', {
+    axios.get('https://backend.hyperial.my.id/authen/vendor', {
       headers: {
         'Authorization': token
       }

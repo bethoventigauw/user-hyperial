@@ -23,7 +23,7 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    axios.post('http://localhost:5000/authen/register', values)
+    axios.post('https://backend.hyperial.my.id/authen/register', values)
       .then(res => {
         if (res.status === 201) {
           alert("Signup successful!");

@@ -18,7 +18,7 @@ const Dashboard = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5000/order/notifications/${vendorId}`);
+        const response = await axios.get(`https://backend.hyperial.my.id/order/notifications/${vendorId}`);
         const groupedNotifications = groupNotificationsByOrderID(response.data.notifications);
         setNotifications(groupedNotifications);
       } catch (error) {
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
   const fetchOrderDetails = async (orderId) => {
     try {
-      const response = await axios.get(`http://localhost:5000/order/orderDetails/${orderId}`);
+      const response = await axios.get(`https://backend.hyperial.my.id/order/orderDetails/${orderId}`);
       setOrderDetails((prevDetails) => ({
         ...prevDetails,
         [orderId]: response.data.orderDetails
@@ -58,7 +58,7 @@ const Dashboard = () => {
 
   const handleDeliver = async (orderId) => {
     try {
-      const response = await axios.post(`http://localhost:5000/order/notifications/${orderId}/deliver`);
+      const response = await axios.post(`https://backend.hyperial.my.id/order/notifications/${orderId}/deliver`);
       message.success(response.data.message);
       // Update notifikasi setelah delivery
       setNotifications(notifications.map(n => n.OrderID === orderId ? { ...n, Shipping: 'Delivered' } : n));

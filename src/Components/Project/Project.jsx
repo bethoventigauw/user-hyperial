@@ -20,7 +20,7 @@ const Project = () => {
 
   const fetchAvailableMaterials = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/admin/allMaterials');
+      const response = await axios.get('https://backend.hyperial.my.id/admin/allMaterials');
       setAvailableMaterials(response.data.materials);
     } catch (error) {
       console.error('Error fetching available materials:', error);
@@ -30,7 +30,7 @@ const Project = () => {
   const fetchProjectManager = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:5000/authen/proyekManager', {
+      const response = await axios.get('https://backend.hyperial.my.id/authen/proyekManager', {
         headers: {
           'Authorization': token
         }
@@ -75,7 +75,7 @@ const Project = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:5000/ProjectManager/addProjectWithMaterials', payload, {
+      const response = await axios.post('https://backend.hyperial.my.id/ProjectManager/addProjectWithMaterials', payload, {
         headers: {
           'Authorization': token
         }

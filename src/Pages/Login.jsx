@@ -18,7 +18,7 @@ function Login() {
     event.preventDefault();
     console.log(values); // Cetak values untuk memastikan data yang dikirimkan
   
-    axios.post('http://localhost:5000/authen/login', values)
+    axios.post('https://backend.hyperial.my.id/authen/login', values)
       .then(res => {
         console.log(res.data); // Cetak respons dari server
         if (res.data.valid) {
