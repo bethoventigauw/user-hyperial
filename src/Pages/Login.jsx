@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { notification } from "antd";
 import './CSS/Login.css';
+import logo from '../Assets/hyperial_logo_only.png'; // Import the image
 
 function Login() {
   const [values, setValues] = useState({
@@ -16,33 +18,48 @@ function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(values); // Cetak values untuk memastikan data yang dikirimkan
-  
+    console.log(values); // Log values to ensure data is sent
+
     axios.post('https://backend.hyperial.my.id/authen/login', values)
       .then(res => {
-        console.log(res.data); // Cetak respons dari server
+        console.log(res.data); // Log server response
         if (res.data.valid) {
           localStorage.setItem('token', res.data.token);
-          localStorage.setItem('role', res.data.role); // Simpan role pengguna
-  
+          localStorage.setItem('role', res.data.role); // Save user role
+
           if (res.data.role === 'vendor') {
-            localStorage.setItem('vendorId', res.data.vendorId); // Simpan ID Vendor
+            localStorage.setItem('vendorId', res.data.vendorId); // Save Vendor ID
             navigate('/vendor');
           } else if (res.data.role === 'ProjectManager') {
             navigate('/projectManager');
           } else {
             navigate('/');
           }
+
+          notification.success({
+            message: 'Login Successful',
+            description: 'Welcome back!',
+          });
         } else {
-          alert("Invalid credentials. Please try again.");
+          notification.error({
+            message: 'Login Failed',
+            description: 'Invalid credentials. Please try again.',
+          });
         }
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        notification.error({
+          message: 'Login Error',
+          description: 'Input a valid email and password!',
+        });
+      });
   };
 
   return (
     <div className="wrapper">
       <div className="login-container">
+        <img src={logo} alt="Logo" className="login-image" />
         <form onSubmit={handleSubmit} className="login-form">
           <h2 className="login-title">Login</h2>
           <div className="form-group">
