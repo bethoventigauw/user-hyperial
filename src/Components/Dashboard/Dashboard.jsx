@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Table, Button, message } from 'antd';
+import { Table, Button, message, Tag } from 'antd';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -93,6 +93,11 @@ const Dashboard = () => {
       title: 'Shipping',
       dataIndex: 'Shipping',
       key: 'Shipping',
+      render: (text) => (
+        <Tag color={text === 'Delivered' ? 'blue' : text === 'Pending' ? 'orange' : 'gray'}>
+          {text}
+        </Tag>
+      ),
     },
     {
       title: 'Aksi',
@@ -107,7 +112,7 @@ const Dashboard = () => {
 
   return (
     <div className="vendor-dashboard">
-      <h2>Dashboard Vendor</h2>
+      <h2>Order Notifications</h2>
       <Table
         columns={columns}
         dataSource={notifications}
