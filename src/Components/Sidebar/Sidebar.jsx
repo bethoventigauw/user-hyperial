@@ -75,17 +75,6 @@ const Sidebar = () => {
             </Link>
           )}
           {role === 'ProjectManager' && (
-            <Link to={`/projectManager/createProject`} style={{ textDecoration: "none" }}>
-              <div
-                className={`sidebarItem ${location.pathname === `/projectManager/createProject` ? 'active' : ''}`}
-                onClick={() => handleItemClick('createProject')}
-              >
-                <AiOutlineFundProjectionScreen className="icon" />
-                <span style={{ display: isOpen ? "block" : "none" }}>Project</span>
-              </div>
-            </Link>
-          )}
-          {role === 'ProjectManager' && (
             <Link to={`/projectList`} style={{ textDecoration: "none" }}>
               <div
                 className={`sidebarItem ${location.pathname === `/projectList` ? 'active' : ''}`}
@@ -93,6 +82,17 @@ const Sidebar = () => {
               >
                 <FaListCheck className="icon" />
                 <span style={{ display: isOpen ? "block" : "none" }}>Project List</span>
+              </div>
+            </Link>
+          )}
+          {role === 'ProjectManager' && (
+            <Link to={`/projectManager/createProject`} style={{ textDecoration: "none" }}>
+              <div
+                className={`sidebarItem ${location.pathname === `/projectManager/createProject` ? 'active' : ''}`}
+                onClick={() => handleItemClick('createProject')}
+              >
+                <AiOutlineFundProjectionScreen className="icon" />
+                <span style={{ display: isOpen ? "block" : "none" }}>Project</span>
               </div>
             </Link>
           )}

@@ -31,7 +31,7 @@ function MainRoutes() {
             <Route path='/dashboard/:vendorId' element={<ProtectedRoute element={<Dashboard />}/>} />
             <Route path='/projectManager/createProject' element={<ProtectedRoute element={<Project />} />}/>
             <Route path='/projectlist' element={<ProtectedRoute element={<ProjectList />}/>} />
-            <Route path='/projectManager' element={<ProtectedRoute element={<ProjectManager />}/>} />
+            <Route path='/projectManager' element={<ProtectedRoute element={<ProjectList />}/>} />
           </Routes>
         </div>
       </div>
