@@ -20,7 +20,7 @@ function Login() {
     event.preventDefault();
     console.log(values); // Log values to ensure data is sent
 
-    axios.post('http://localhost:5000/authen/login', values)
+    axios.post('https://user.hyperial.my.id/login', values)
       .then(res => {
         console.log(res.data); // Log server response
         if (res.data.valid) {
