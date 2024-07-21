@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaUser, FaLock } from "react-icons/fa";
 import { notification } from "antd";
 import './CSS/Login.css';
-import logo from '../Assets/hyperial_logo_only.png'; // Import the image
 
 function Login() {
   const [values, setValues] = useState({
@@ -20,7 +20,7 @@ function Login() {
     event.preventDefault();
     console.log(values); // Log values to ensure data is sent
 
-    axios.post('https://backend.hyperial.my.id/authen/login', values)
+    axios.post('http://localhost:5000/authen/login', values)
       .then(res => {
         console.log(res.data); // Log server response
         if (res.data.valid) {
@@ -59,7 +59,6 @@ function Login() {
   return (
     <div className="wrapper">
       <div className="login-container">
-        <img src={logo} alt="Logo" className="login-image" />
         <form onSubmit={handleSubmit} className="login-form">
           <h2 className="login-title">Login</h2>
           <div className="form-group">
@@ -67,29 +66,35 @@ function Login() {
             <input
               type="email"
               name="Email"
+              placeholder="Enter your email"
               value={values.Email}
               onChange={handleInput}
               required
             />
+            <FaUser className="icon"/>
+
           </div>
           <div className="form-group">
             <label>Password</label>
             <input
               type="password"
               name="Password"
+              placeholder="Enter your password"
               value={values.Password}
               onChange={handleInput}
               required
             />
+            <FaLock className="icon"/>
+
           </div>
           <button type="submit" className="login-button">Login</button>
         </form>
-        <div className="back-to-landing">
-          <Link to="https://hyperial.my.id/" className="landing-link">Back to LandingPage</Link>
-        </div>
+        <p className="signup-link">
+         <Link to="https://hyperial.my.id">Back to Landing Page</Link>
+        </p>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default Login;
